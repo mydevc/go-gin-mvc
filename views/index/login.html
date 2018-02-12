@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Test</title>
+</head>
+<body>
+<form action="/login" method="post">
+<input type="text" name="user_name" value="" />
+<input type="hidden" name="_csrf" value="{{.csrf_token}}">
+<input type="submit" name="submit" value="登录">
+</form>
+</body>
+</html>
