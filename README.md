@@ -13,6 +13,7 @@
 ## 其它注意事项<br/>
 1、队列需要单启服务，与http独立<br/>
 2、依赖包用govendor管理，命令：<br/>
-govendor sync vendor/vendor.json <br/>
+   cd项目根目录<br/>
+   govendor sync vendor/vendor.json <br/>
 
 
