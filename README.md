@@ -7,6 +7,7 @@
 4、基于beanstalk的队列服务；<br/>
 5、类php laravel框架的数据验证；<br/>
 6、csrf防跨站攻击；<br/>
+7、jwt集成;<br/>
 <br/>
 其它注意事项<br/>
 1、队列需要单启服务，与http独立<br/>
