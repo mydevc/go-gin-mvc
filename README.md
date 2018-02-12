@@ -1,5 +1,5 @@
 # go-gin-mvc
-基于go gin 框架搭建的MVC架构的基础项目空架子<br/>
+基于gin-gonic/gin 框架搭建的MVC架构的基础项目空架子<br/>
 此项目集成了小型网站开发常用的功能：<br/>
 1、基于redis存储的session;<br/>
 2、基于redis存储的cache操作；<br/>
