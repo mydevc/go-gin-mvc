@@ -57,7 +57,7 @@ func Consumer(fname, tubeName string) {
 
 		call_result := queue_jobs.CallJobFun("send_mail",string(body))
 
-		if call_result != nil {
+		if call_result != true {
 			fmt.Println("调用出错了")
 		}else {
 			fmt.Println("调用完成")
