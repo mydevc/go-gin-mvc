@@ -4,7 +4,7 @@ import "fmt"
 
 var jobs map[string]JobFunc
 
-type JobFunc func(json string) error
+type JobFunc func(json string) bool
 
 
 //在这里注册
@@ -13,13 +13,16 @@ func init() {
 	jobs["send_mail"] = send_mail
 }
 
-func CallJobFun(func_name string, json string) error {
-	return jobs[func_name](json)
-
+func CallJobFun(func_name string, json string) bool {
+	 _, ok := jobs[func_name]
+	if ok {
+		return jobs[func_name](json)
+	}
+	return false
 }
 
 //测试用例
-func send_mail(mail string) error {
+func send_mail(mail string) bool {
 	fmt.Println(mail)
-	return nil
+	return true
 }
