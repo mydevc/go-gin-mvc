@@ -1,35 +1,30 @@
 package main
 
 import (
-	"gin_api/routers"
 	"github.com/gin-gonic/gin"
-	"gin_api/common"
 	"github.com/robfig/cron"
-	"gin_api/database"
+	"go-gin-mvc/utils"
+	"go-gin-mvc/models"
+	"go-gin-mvc/route"
 )
 
-
 func main() {
+
 	gin.SetMode(gin.DebugMode)
 
-	//gin工程实例 *gin.Engine
-	router := routers.Router
+	models.GetMaster()
+	models.GetSlave()
 
-	//session设置，注意顺序,路由配置前
-	common.SetSession(router)
+	r := route.SetupRouter()
 
-	//路由初始化
-	routers.SetupRouter()
 
-	//模板路径设置
-	common.SetTemplate(router)
 
+	//定时程序启动
 	c := cron.New()
-	c.AddFunc("*/30 * * * * *", database.CheckDb)
+	//数据库状态检查
+	c.AddFunc("*/600 * * * * *", models.DbCheck)
 	c.Start()
 
-	// Listen and Server in 0.0.0.0:8080
-	router.Run(":8080")
+	port := utils.Config.Section("system").Key("http_port").String()
+	r.Run(":" + port)
 }
-
-

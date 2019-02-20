@@ -1,0 +1,8 @@
+package models
+
+type User struct {
+	Age       int    `json:"age" xorm:"not null INT(11)"`
+	CreatedAt int    `json:"created_at" xorm:"not null INT(11)"`
+	Name      string `json:"name" xorm:"not null VARCHAR(20)"`
+	UserId    int    `json:"user_id" xorm:"not null pk autoincr comment('用户id') INT(11)"`
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title UserIndex</title>
+</head>
+<body>
+<form action="/protected" method="post">
+    MyName: <input type="text" name="name" value="MyName" />
+    Age: <input type="text" name="age" value="20" />
+    <input type="hidden" name="_csrf" value="{{.token}}">
+    <input type="submit" value="提交" />
+</form>
+
+<br/><br/>
+<table>
+    <tr><td>{{.name}}</td><td>{{.password}}</td></tr>
+</table>
+</body>
+</html>
