@@ -242,4 +242,4 @@ xorm reverse mysql "root:12345678@tcp(dbm1.baidu.com:3306)/test?charset=utf8" .
 ```
 项目地址：[https://github.com/mydevc/go-gin-mvc](https://github.com/mydevc/go-gin-mvc)
 
-EMAIL：mydev@126.com
+##EMAIL：mydev@126.com
