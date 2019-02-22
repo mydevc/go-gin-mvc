@@ -10,6 +10,7 @@ import (
 	"strconv"
 )
 
+//Redis测试
 func RedisSetAction(ctx *gin.Context) {
 
 
@@ -24,7 +25,7 @@ func RedisSetAction(ctx *gin.Context) {
 
 }
 
-
+//Sesssion测试
 func SessionAction(ctx *gin.Context) {
 
 	session := sessions.Default(ctx)
@@ -42,7 +43,7 @@ func SessionAction(ctx *gin.Context) {
 
 }
 
-
+//Cookie测试
 func CookieAction(ctx *gin.Context) {
 
 	var count int
@@ -56,6 +57,7 @@ func CookieAction(ctx *gin.Context) {
 
 }
 
+//队列生产者测试
 func QueueAction(ctx *gin.Context)  {
 	queue.NewSender("SomeQueue", "Dosome", jobs.Subscribe{Name: "We are doing..."}).Send()
 }

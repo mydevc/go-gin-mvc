@@ -22,7 +22,7 @@ func init() {
 	maxage, _ := utils.Config.Section("session").Key("sessiongcmaxlifetime").Int()
 	csrfscret := utils.Config.Section("session").Key("csrfscret").String()
 	//Session配置，Redis存储
-	//store,err:=redis.NewStore(10,"tcp","rs1.rs.youfa365.com:6379","",[]byte("asfajfa;lskjr2"))
+	//store,err:=redis.NewStore(10,"tcp","rs1.rs.baidu.com:6379","",[]byte("asfajfa;lskjr2"))
 	store, err := redis.NewStoreWithPool(utils.RedisPool, []byte("as&8(0fajfa;lskjr2"))
 	store.Options(sessions.Options{
 		"/",

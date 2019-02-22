@@ -1,5 +1,6 @@
 # go-gin-mvc
 基于gin-gonic/gin 框架搭建的MVC架构的基础项目空架子，未经商用检验，请谨慎参考。
+项目中依赖的包自行go get 安装
 
 ## 此项目集成了小型网站开发常用的功能:  
 - 基于redis连接池存储的session操作;
@@ -7,7 +8,7 @@
 详见代码：route/router.go
 关键代码：
 //不用连接池
-//store,err:=redis.NewStore(10,"tcp","rs1.rs.youfa365.com:6379","",[]byte("asfajfa;lskjr2"))
+//store,err:=redis.NewStore(10,"tcp","rs1.rs.baidu.com:6379","",[]byte("asfajfa;lskjr2"))
 //使用连接池
 store, err := redis.NewStoreWithPool(utils.RedisPool, []byte("as&8(0fajfa;lskjr2"))
 ```
@@ -158,7 +159,7 @@ golang.org/x/crypto/md4
 ```
 ##xorm生成struct
 ```
-xorm reverse mysql "root:12345678@tcp(dbm1.rs.youfa365.com:3306)/test?charset=utf8" .
+xorm reverse mysql "root:12345678@tcp(dbm1.rs.baidu.com:3306)/test?charset=utf8" .
 ```
 
 
