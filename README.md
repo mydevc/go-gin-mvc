@@ -227,13 +227,25 @@ c.AddFunc("*/600 * * * * *", models.DbCheck)
 c.Start()
 ```
 ## cmd/xorm安装注意事项
->正常安装命令： 
+##### 正常安装命令： 
+```
 go get github.com/go-xorm/cmd/xorm
-但会报错，有两个包无法安装，cloud.google.com/go/civil，golang.org/x/crypto/md4，移步到https://github.com/GoogleCloudPlatform/google-cloud-go下载相应的包
-GOPATH目录下新建cloud.google.com 文件夹（与github.com同级）
+```
+但会报错，有两个包无法安装，
+```
 cloud.google.com/go/civil
 golang.org/x/crypto/md4
-进入cmd/xorm 运行命令 go build
+```
+移步到https://github.com/GoogleCloudPlatform/google-cloud-go下载相应的包
+GOPATH目录下新建cloud.google.com 文件夹（与github.com同级）
+```
+cloud.google.com/go/civil
+golang.org/x/crypto/md4
+```
+进入cmd/xorm 运行命令
+```
+go build
+```
 查看帮助 xorm help reverse
 
 ## xorm生成struct
