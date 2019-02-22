@@ -11,7 +11,8 @@ var CsrfExcept *ini.File
 var RootPath string
 
 func init()  {
-	RootPath="/Users/fuxiaojun/data/golang/gopath/src/go-gin-mvc"
+	//RootPath项目绝对路径
+	RootPath="/Users/baidu/data/golang/gopath/src/go-gin-mvc"
 	var err error
 	Config, err = ini.Load(RootPath+"/conf/config.ini");
 	if err != nil {
