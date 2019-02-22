@@ -17,17 +17,21 @@ store, err := redis.NewStoreWithPool(utils.RedisPool, []byte("as&8(0fajfa;lskjr2
 - 基于xorm的数据库操作,主从分离配置，支持多从库配置,鲜活连接定时PING操作，集成xorm/cmd；
 
 - 基于rabbitmq的队列应用，注意生产者与消费者队列名称的一致性
-```
-多个任务可发送到一个队列，也可以灵活应用一个队列一个任务;
-生产者与消费者消息传递的是序列化的结构体，结构体由生产者提供，并自行反序列化操作；  
-消费者：
-console/queue_daemon.go
 
+>>多个任务可发送到一个队列，也可以灵活应用一个队列一个任务;
+生产者与消费者消息传递的是序列化的结构体，结构体由生产者提供，并自行反序列化操作；  
+
+>>消费者：
+console/queue_daemon.go
 （队列需要单独控制台命令启动，与http服务独立[避免相互影响]；）
 
-生产者（这里仅测试使用，正式应用一般在web代码中）
-console/queue_daemon.go  
-```
+>>生产者（这里仅测试使用，正式应用一般在web代码中）
+console/send_single.go
+
+>>WEB测试生产者：
+http://localhost:8080/queue
+
+
 
 - csrf防跨站攻击,此功能集成此中间件完成[点这里](https://github.com/utrack/gin-csrf),更多[中间件](https://github.com/gin-gonic/contrib)。
   这里要重点说一下，utrack/gin-csrf这个中间件没有加白名单机制排除一些例外，这在实际应用中是很常见的，尤其是对外合作接口中。

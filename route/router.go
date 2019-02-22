@@ -78,7 +78,7 @@ func SetupRouter() *gin.Engine {
 	//用户编辑
 	Router.GET("/user/edit/:id", users.UserEditAction)
 
-	Router.GET("/protected", ctrls.TokenAction)
+	Router.GET("/queue", ctrls.QueueAction)
 
 	Router.POST("/protected", func(c *gin.Context) {
 		c.String(200, "CSRF token is valid")
